@@ -1,3 +1,7 @@
+controllers:
+    resource: ../../src/Ui/Http/Trial/
+    type: annotation
+
 kernel:
     resource: ../../src/Infrastructure/Symfony/Kernel.php
     type: annotation
