@@ -19,7 +19,7 @@ class Contract
     protected string $signatures;
     protected int $score;
 
-    private function __construct(string $signatures, int $score)
+    protected function __construct(string $signatures, int $score)
     {
         $this->signatures = $signatures;
         $this->score = $score;
@@ -51,7 +51,7 @@ class Contract
         return $this->score > $contract->getScore() ? self::WINS : ($this->getScore() === $contract->getScore() ? self::TIE : self::LOOSE);
     }
 
-    private static function scoreFromString(string $signatures): int
+    protected static function scoreFromString(string $signatures): int
     {
         $score = 0;
         $hasKingSignature = str_contains($signatures, 'K');
